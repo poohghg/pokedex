@@ -1,18 +1,17 @@
 module.exports = {
   parser: '@typescript-eslint/parser',
-  plugins: ['@typescript-eslint', 'react-hooks'],
+  plugins: ['@typescript-eslint', 'prettier'],
   extends: [
     'airbnb', // or airbnb-base
-    'plugin:react/recommended',
-    'plugin:jsx-a11y/recommended', // 설치 한경우
-    'plugin:import/errors', // 설치한 경우
-    'plugin:import/warnings', // 설치한 경우
+    'prettier',
     'plugin:@typescript-eslint/recommended',
-    'plugin:prettier/recommended',
   ],
   rules: {
     'prettier/prettier': ['error', { yandOfLine: 'auto' }],
-    'react/jsx-filename-extension': ['warn', { extensions: ['.js', '.jsx'] }],
+    'react/jsx-filename-extension': [
+      'warn',
+      { extensions: ['.js', '.jsx', 'tsx'] },
+    ],
     'react/prefer-stateless-function': 0,
     'react/jsx-one-expression-per-line': 0,
     'import/prefer-default-export': 'off',
@@ -30,6 +29,12 @@ module.exports = {
         jsx: 'never',
         ts: 'never',
         tsx: 'never',
+      },
+    ],
+    'react/function-component-definition': [
+      2,
+      {
+        namedComponents: 'arrow-function',
       },
     ],
   },
