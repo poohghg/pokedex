@@ -42,7 +42,7 @@ const Index = styled.p`
   color: #d1d5db;
 `;
 
-const PoketmonList: React.FC = React.memo(() => {
+const PoketmonList: React.FC = () => {
   const getImageUrl = (pokemonIndex: number): string =>
     `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemonIndex}.png`;
 
@@ -63,6 +63,6 @@ const PoketmonList: React.FC = React.memo(() => {
       </List>
     </Base>
   );
-});
+};
 
-export default PoketmonList;
+export default React.memo(PoketmonList);
