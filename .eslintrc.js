@@ -20,6 +20,7 @@ module.exports = {
     'react/prop-types': 'off',
     'react/button-has-type': 'off',
     'react/no-array-index-key': 'off',
+    'import/no-unresolved': 'off',
     'no-alert': 'off',
     'import/extensions': [
       'error',

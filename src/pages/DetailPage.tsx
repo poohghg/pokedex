@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { Fragment } from 'react';
+import { PoketmonList } from 'components';
 import { useParams } from 'react-router-dom';
 
 type params = {
@@ -7,7 +8,13 @@ type params = {
 
 const DetailPage = () => {
   const { id } = useParams<params>();
-  return <div>현재 ID는: {id}</div>;
+
+  return (
+    <>
+      <PoketmonList />
+      <div>현재 ID는: {id}</div>
+    </>
+  );
 };
 
 export default DetailPage;

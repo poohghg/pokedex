@@ -1,12 +1,18 @@
 /* eslint-disable react/jsx-filename-extension */
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { QueryClient, QueryClientProvider } from 'react-query';
+
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+const queryClinet = new QueryClient();
+
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <QueryClientProvider client={queryClinet}>
+      <App />
+    </QueryClientProvider>
   </React.StrictMode>,
   document.getElementById('root'),
 );
